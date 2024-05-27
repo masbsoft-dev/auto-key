@@ -1,10 +1,14 @@
 import './App.css'
+import Logo from './assets/Logo.png'
 
 function App() {
 
   return (
       <>
       <div className="relative w-full min-h-80 p-12">
+          <div className="flex justify-center items-center p-12">
+              <img alt="" src={Logo} className="max-w-[420px]" />
+          </div>
           <div className="flex justify-center items-center gap-10">
             <a href="tel:8131329121" className="bg-purple-800 hover:bg-white hover:text-purple-900 font-semibold rounded-md px-12 py-3 duration-500">
                 LIGAR AGORA
