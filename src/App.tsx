@@ -1,10 +1,31 @@
 import './App.css'
 import Logo from './assets/Logo.png'
 import { FaInstagram } from "react-icons/fa";
+import {useState, useEffect} from "react";
+import { SlArrowUp } from "react-icons/sl";
 
 function App() {
+    const [showButton, setShowButton] = useState<boolean>(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            window.scrollY > 200 ? setShowButton(true): setShowButton(false);
+        }
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        }
+    }, []);
+
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+        });
+    };
   return (
-      <>
+      <div>
           <div className="relative w-full min-h-80 p-12 bg-wallpaper">
               <div className="flex justify-center items-center p-6">
                   <img alt="" src={Logo} className="max-w-[420px]"/>
@@ -108,8 +129,14 @@ function App() {
           <div className="flex flex-col items-center text-center justify-center p-6">
               <a href="https://www.instagram.com/autokeyy" target="_blank" className=""><FaInstagram /></a>
           </div>
-      </>
+          {showButton && (
+              <div>
+                  <button className="fixed m-2 bottom-8 right-8 bg-gray-800/70 p-3 text-white text-lg font-bold rounded-md" aria-label="Filter" onClick={scrollToTop}>
+                      <SlArrowUp />
+                  </button>
+              </div>
+          )}
+      </div>
   )
 }
-
 export default App
