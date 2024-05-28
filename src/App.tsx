@@ -2,12 +2,15 @@ import './App.css'
 import Logo from './assets/Logo.png'
 
 function App() {
-
   return (
       <>
       <div className="relative w-full min-h-80 p-12">
-          <div className="flex justify-center items-center p-12">
-              <img alt="" src={Logo} className="max-w-[420px]" />
+          <div className="flex justify-center items-center p-6">
+              <img alt="" src={Logo} className="max-w-[420px]"/>
+          </div>
+          <div className="text-center p-6 uppercase">
+              <h1 className="text-7xl font-black">Chaveiro em Recife</h1>
+              <p className="text-purple-800 text-3xl font-black pt-3">Atendimento Especializado</p>
           </div>
           <div className="flex justify-center items-center gap-10">
             <a href="tel:8131329121" className="bg-purple-800 hover:bg-white hover:text-purple-900 font-semibold rounded-md px-12 py-3 duration-500">
