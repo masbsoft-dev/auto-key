@@ -3,6 +3,8 @@ import Logo from './assets/Logo.png'
 import { FaInstagram } from "react-icons/fa";
 import {useState, useEffect} from "react";
 import { SlArrowUp } from "react-icons/sl";
+import { FaWhatsapp } from "react-icons/fa";
+import { BsTelephone } from "react-icons/bs";
 
 function App() {
     const [showButton, setShowButton] = useState<boolean>(false);
@@ -36,13 +38,12 @@ function App() {
               </div>
               <div className="flex justify-center text-center items-center gap-10">
                   <a href="tel:8131329121"
-                     className="bg-purple-800 hover:bg-white md:text-lg text-xs hover:text-purple-900 font-semibold rounded-md md:px-12 px-6 py-3 duration-500">
-                      LIGAR AGORA
+                     className="flex gap-2 items-center bg-purple-800 hover:bg-white md:text-lg text-xs hover:text-purple-900 font-semibold rounded-md md:px-12 px-6 py-3 duration-500">
+                      <BsTelephone/> LIGAR AGORA
                   </a>
-                  <a href="https://wa.me/5581987444125?text=Ol%C3%A1%21+Vim+do+site.+Tenho+interesse+no+servi%C3%A7o."
-                     target="_blank"
-                     className="bg-green-500 hover:bg-emerald-700 md:text-lg text-xs font-semibold rounded-md md:px-12 px-6 py-3 duration-500">
-                      FALAR NO WHATSAPP
+                  <a href="https://wa.me/5581987444125?text=Ol%C3%A1%21+Vim+do+site.+Tenho+interesse+no+servi%C3%A7o." target="_blank"
+                     className="flex gap-2 items-center bg-green-500 hover:bg-emerald-700 md:text-lg text-xs font-semibold rounded-md md:px-12 px-6 py-3 duration-500">
+                      <FaWhatsapp/> FALAR NO WHATSAPP
                   </a>
               </div>
           </div>
@@ -51,29 +52,25 @@ function App() {
                   <h1 className="uppercase font-black md:text-5xl text-3xl pb-12">Nossos serviços</h1>
               </div>
               <div className="flex flex-col md:flex-row w-full gap-4 justify-center items-center text-black p-5">
-                  <div
-                      className="flex bg-purple-100 p-4 items-center flex-col text-center min-h-[300px] rounded-md hover:bg-purple-200 duration-500 cursor-pointer">
+                  <div className="flex bg-purple-100 p-4 items-center flex-col text-center max-h-[320px] w-[80%] rounded-md hover:bg-purple-200 duration-500 cursor-pointer">
                       <h1 className="font-bold mb-2 uppercase">Cópias De Chave</h1>
                       <img className="max-w-[280px] p-5" src={Logo}/>
-                      <p>Realizamos Cópias de Chaves Codificadas em geral. Entre em contato agora mesmo.</p>
+                      <p className="max-w-[80%]">Realizamos Cópias de Chaves Codificadas em geral. Entre em contato agora mesmo.</p>
                   </div>
-                  <div
-                      className="flex bg-purple-100  p-4 items-center flex-col text-center min-h-[300px] rounded-md hover:bg-purple-200 duration-500 cursor-pointer">
+                  <div className="flex bg-purple-100 p-4 items-center flex-col text-center max-h-[320px] w-[80%] rounded-md hover:bg-purple-200 duration-500 cursor-pointer">
                       <h1 className="font-bold mb-2 uppercase">Chaves Canivetes</h1>
                       <img className="max-w-[280px] p-5" src={Logo}/>
-                      <p>Chaves Canivetes e Presenciais Nacionais e Importadas. Entre em contato agora mesmo.</p>
+                      <p className="">Chaves Canivetes e Presenciais Nacionais e Importadas. Entre em contato agora mesmo.</p>
                   </div>
-                  <div
-                      className="flex bg-purple-100  p-4 items-center flex-col text-center min-h-[300px] rounded-md hover:bg-purple-200 duration-500 cursor-pointer">
+                  <div className="flex bg-purple-100 p-4 items-center flex-col text-center max-h-[320px] w-[80%] rounded-md hover:bg-purple-200 duration-500 cursor-pointer">
                       <h1 className="font-bold mb-2 uppercase">Trocas De Carcaça</h1>
                       <img className="max-w-[280px] p-5" src={Logo}/>
-                      <p>A carcaça da sua chave esta danificada ou feia? Nós trocamos para você.</p>
+                      <p className="max-w-[80%]">A carcaça da sua chave esta danificada ou feia? Nós trocamos para você.</p>
                   </div>
-                  <div
-                      className="flex bg-purple-100  p-4 items-center flex-col text-center min-h-[300px] rounded-md hover:bg-purple-200 duration-500 cursor-pointer">
+                  <div className="flex bg-purple-100 p-4 items-center flex-col text-center max-h-[320px] w-[80%] rounded-md hover:bg-purple-200 duration-500 cursor-pointer">
                       <h1 className="font-bold mb-2 uppercase">Chaves Codificadas</h1>
                       <img className="max-w-[280px] p-5" src={Logo}/>
-                      <p>Profissionais prontos para realizarem as mais diversas codificações de chaves.</p>
+                      <p className="max-w-[80%]">Profissionais prontos para realizarem as mais diversas codificações de chaves.</p>
                   </div>
               </div>
           </div>
@@ -103,17 +100,16 @@ function App() {
               </div>
           </div>
           <div className="w-full p-12">
-              <div className="flex flex-col items-center text-center justify-center">
+              <div className="flex flex-col items-center text-center justify-center text-white">
                   <h1 className="w-[80%] uppercase font-black md:text-5xl text-xl text-wrap">NÃO CORRA RISCOS, CONFIE EM
                       QUEM SABE!</h1>
-                  <p className="w-[80%] p-2 text-center">Ao escolher um profissional inadequado, você corre o risco de
+                  <p className="w-[60%] p-2 text-center">Ao escolher um profissional inadequado, você corre o risco de
                       danificar a programação eletrônica do seu veículo. A falta de técnica e conhecimento avançado pode
                       levar a erros graves, resultando em custosas correções e até mesmo na necessidade de substituição
                       de componentes essenciais.</p>
-                  <a href="https://wa.me/5581987444125?text=Ol%C3%A1%21+Vim+do+site.+Tenho+interesse+no+servi%C3%A7o."
-                     target="_blank"
-                     className="bg-green-500 mt-6 hover:bg-emerald-700 md:text-lg text-xs font-semibold rounded-md md:px-12 px-6 py-3 duration-500">
-                      FALAR NO WHATSAPP
+                  <a href="https://wa.me/5581987444125?text=Ol%C3%A1%21+Vim+do+site.+Tenho+interesse+no+servi%C3%A7o." target="_blank"
+                     className="flex gap-2 mt-6 items-center bg-green-500 hover:bg-emerald-700 md:text-lg text-xs font-semibold rounded-md md:px-12 px-6 py-3 duration-500">
+                      <FaWhatsapp/> FALAR NO WHATSAPP
                   </a>
               </div>
           </div>
