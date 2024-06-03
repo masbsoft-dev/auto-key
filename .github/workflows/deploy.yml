@@ -10,27 +10,27 @@ on:
 
 jobs:
   build:
-      runs-on: ubuntu-latest
-      steps:
-        - name: build
-          run: echo building the app
+    runs-on: ubuntu-latest
+    steps:
+      - name: build
+        run: echo building the app
 
   deploy-production:
-      runs-on: ubuntu-latest
-      environment:
-        name: production
-        url: https://chaveiroautokey.com.br
-      needs: deploy-staging
-      steps:
-        - name: Repo Checkout
-          uses: actions/chekout@v1
-        - name: Hostinger Production
-          uses: easingthemes/ssh-deploy@main
-          with:
-              SSH_PRIVATE_KEY: ${{secrets.SERVER_SSH_KEY}}
-              ARGS: "-rlgoDzvc --delete"
-              SOURCE: "public/"
-              REMOTE_HOST: ${{vars.REMOTE_HOST}}
-              REMOTE_USER: ${{vars.REMOTE_USER}}
-              REMOTE_PORT: ${{vars.REMOTE_PORT}}
-              TARGET: ${{vars.TARGET}}
+    runs-on: ubuntu-latest
+    environment:
+      name: production
+      url: https://chaveiroautokey.com.br
+    needs: deploy-staging
+    steps:
+      - name: Repo Checkout
+        uses: actions/chekout@v1
+      - name: Hostinger Production
+        uses: easingthemes/ssh-deploy@main
+        with:
+          SSH_PRIVATE_KEY: ${{secrets.SERVER_SSH_KEY}}
+          ARGS: "-rlgoDzvc --delete"
+          SOURCE: "public/"
+          REMOTE_HOST: ${{vars.REMOTE_HOST}}
+          REMOTE_USER: ${{vars.REMOTE_USER}}
+          REMOTE_PORT: ${{vars.REMOTE_PORT}}
+          TARGET: ${{vars.TARGET}}
