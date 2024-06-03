@@ -2,10 +2,9 @@ name: auto-key production
 
 on:
   push:
-      branches: [main]
+    branches: [main]
   pull_request:
-      branches: [main]
-
+    branches: [main]
   workflow_dispatch:
 
 jobs:
@@ -20,10 +19,10 @@ jobs:
     environment:
       name: production
       url: https://chaveiroautokey.com.br
-    needs: deploy-production
+    needs: build
     steps:
       - name: Repo Checkout
-        uses: actions/chekout@v1
+        uses: actions/checkout@v2
       - name: Hostinger Production
         uses: easingthemes/ssh-deploy@main
         with:
