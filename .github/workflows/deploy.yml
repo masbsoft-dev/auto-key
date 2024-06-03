@@ -20,7 +20,7 @@ jobs:
     environment:
       name: production
       url: https://chaveiroautokey.com.br
-    needs: deploy-production
+    needs: production
     steps:
       - name: Repo Checkout
         uses: actions/chekout@v1
