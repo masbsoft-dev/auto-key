@@ -9,13 +9,13 @@ on:
   workflow_dispatch:
 
 jobs:
-    build:
+  build:
       runs-on: ubuntu-latest
       steps:
         - name: build
           run: echo building the app
 
-    deploy-production:
+  deploy-production:
       runs-on: ubuntu-latest
       environment:
         name: production
