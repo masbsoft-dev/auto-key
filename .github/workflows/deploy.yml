@@ -20,7 +20,15 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
           script: |
-            cd /var/www/chaveiroautokey
-            git pull origin main
+            cd /home/marcio
+            if [ -d site ]; then
+              cd site && git pull origin main
+            else
+              git clone git@github.com:masbsoft-dev/auto-key.git site
+              cd site
+            fi
+            npm install
             npm run build
-            cp -r dist/* /var/www/chaveiroautokey/
+            sudo rm -rf /var/www/chaveiroautokey/*
+            sudo cp -r dist/* /var/www/chaveiroautokey/
+
