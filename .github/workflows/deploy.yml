@@ -15,7 +15,7 @@ jobs:
       - name: Conectar via SSH e fazer deploy
         uses: appleboy/ssh-action@v1.0.3
         with:
-          host: ${{ secrets.SERVER_IP }}
+          host: ${{ vars.SERVER_IP }}
           username: marcio
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
