@@ -1,35 +1,35 @@
-name: Deploy para o Servidor
+name: auto-key production
 
 on:
   push:
-    branches: [ "main" ]  # ou "master", dependendo do seu repositório
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Clonar o repositório
-        uses: actions/checkout@v3
+      - name: build
+        run: echo building the app
 
-      - name: Conectar via SSH e fazer deploy
-        uses: appleboy/ssh-action@v1.0.3
+  deploy-production:
+    runs-on: ubuntu-latest
+    environment:
+      name: production
+      url: https://chaveiroautokey.com.br
+    needs: build
+    steps:
+      - name: Repo Checkout
+        uses: actions/checkout@v2
+      - name: Hostinger Production
+        uses: easingthemes/ssh-deploy@main
         with:
-          host: ${{ vars.SERVER_IP }}
-          username: marcio
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: 22
-          script: |
-            set -e
-            cd /home/marcio
-            if [ -d site ]; then
-              cd site && git pull origin main
-            else
-              git clone git@github.com:masbsoft-dev/auto-key.git site
-              cd site
-            fi
-            npm install
-            npm run build
-            sudo rm -rf /var/www/chaveiroautokey/*
-            sudo cp -r dist/* /var/www/chaveiroautokey/
-
+          SSH_PRIVATE_KEY: ${{secrets.SERVER_SSH_KEY}}
+          ARGS: "-rlgoDzvc --delete"
+          SOURCE: "/"
+          REMOTE_HOST: ${{vars.REMOTE_HOST}}
+          REMOTE_USER: ${{vars.REMOTE_USER}}
+          REMOTE_PORT: ${{vars.REMOTE_PORT}}
+          TARGET: ${{vars.TARGET}}

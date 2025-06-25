@@ -1,7 +1,12 @@
+import TagManager from 'react-gtm-module'
+const tagManagerArgs = {
+    gtmId: 'AW-11018362697'
+}
+TagManager.initialize(tagManagerArgs)
 import './App.css'
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import Logo from './assets/Logo.png'
+import Logo from './assets/logo.jpg'
 import Chave from './assets/chave.png'
 import ChaveCanivete from './assets/chave-do-carro.png'
 import ChaveCarcaca from './assets/chave-carcaca.png'
@@ -23,6 +28,7 @@ import img9 from "./assets/fotos/09.jpg"
 import img10 from "./assets/fotos/10.jpg"
 
 function App() {
+
     const [showButton, setShowButton] = useState<boolean>(false);
 
     useEffect(() => {
@@ -66,14 +72,14 @@ function App() {
       <div>
           <div className="relative w-full min-h-80 p-12 bg-wallpaper">
               <div className="flex justify-center items-center p-6">
-                  <img alt="" src={Logo} className="max-w-[453px]"/>
+                  <img alt="" src={Logo} className="max-w-[250px]"/>
               </div>
               <div className="text-center p-6 uppercase">
                   <h1 className="md:text-7xl text-5xl font-black text-white">Chaveiro em Recife</h1>
                   <p className="text-purple-800 md:text-3xl text-xl font-black pt-3">Automotivo e Residencial</p>
               </div>
               <div className="flex md:flex-row flex-col justify-center text-center items-center gap-10">
-                  <a href="tel:8131329121"
+                  <a href="tel:81987444125"
                      className="flex gap-2 items-center content-center bg-purple-800 hover:bg-white text-lg
                      hover:text-purple-900 justify-center font-semibold rounded-md md:px-12 w-full md:w-[25%] px-12 py-3 duration-500">
                       <BsTelephone className="md:text-2xl text-xl"/> LIGAR AGORA
