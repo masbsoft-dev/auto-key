@@ -26,6 +26,7 @@ import img7 from "./assets/fotos/07.jpg"
 import img8 from "./assets/fotos/08.jpg"
 import img9 from "./assets/fotos/09.jpg"
 import img10 from "./assets/fotos/10.jpg"
+import BtWhatsApp from "./components/BtWhatsApp.tsx";
 
 function App() {
 
@@ -84,11 +85,7 @@ function App() {
                      hover:text-purple-900 justify-center font-semibold rounded-md md:px-12 w-full md:w-[25%] px-12 py-3 duration-500">
                       <BsTelephone className="md:text-2xl text-xl"/> LIGAR AGORA
                   </a>
-                  <a href="https://wa.me/5581987444125?text=Ol%C3%A1%21+Vim+do+site.+Tenho+interesse+no+servi%C3%A7o." target="_blank"
-                     className="flex gap-2 items-center content-center bg-green-500 hover:bg-emerald-700 text-lg
-                     justify-center font-semibold rounded-md md:px-12 w-full md:w-[25%] px-12 py-3 duration-500">
-                      <FaWhatsapp className="md:text-2xl text-xl"/> FALAR NO WHATSAPP
-                  </a>
+                  <BtWhatsApp/>
               </div>
           </div>
           <div className="relative w-full min-h-80 py-12 bg-white">
@@ -167,11 +164,7 @@ function App() {
                       danificar a programação eletrônica do seu veículo. A falta de técnica e conhecimento avançado pode
                       levar a erros graves, resultando em custosas correções e até mesmo na necessidade de substituição
                       de componentes essenciais.</p>
-                  <a href="https://wa.me/5581987444125?text=Ol%C3%A1%21+Vim+do+site.+Tenho+interesse+no+servi%C3%A7o." target="_blank"
-                     className="flex gap-2 mt-6 items-center content-center bg-green-500 hover:bg-emerald-700 text-lg
-                     justify-center font-semibold rounded-md md:px-12 w-full md:w-[25%] px-12 py-3 duration-500">
-                      <FaWhatsapp className="text-2xl"/> FALAR NO WHATSAPP
-                  </a>
+                  <BtWhatsApp/>
               </div>
           </div>
           <div className="flex flex-col items-center text-center justify-center bg-gray-950 p-6">
