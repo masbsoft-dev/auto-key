@@ -14,7 +14,6 @@ import ChaveCodificada from './assets/chave-codificada.png'
 import { FaInstagram } from "react-icons/fa";
 import {useState, useEffect} from "react";
 import { SlArrowUp } from "react-icons/sl";
-import { FaWhatsapp } from "react-icons/fa";
 import { BsTelephone } from "react-icons/bs";
 import img1 from "./assets/fotos/01.jpg"
 import img2 from "./assets/fotos/02.jpg"
