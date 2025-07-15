@@ -24,21 +24,8 @@ const GoogleReviews = () => {
     const [loading, setLoading] = useState(true);
 
     const fetchReviews = async () => {
-        const proxyUrl = "https://cors-anywhere.herokuapp.com/";
-        const placeId = "ChIJd0c9hvsZqwcRMhjyyqrD8B4";
-        const apiKey = "AIzaSyCVBRx3eWw69iXv5S2tPYbvxAH37ZxLWF4";
-
-        const fields = [
-            "name",
-            "rating",
-            "user_ratings_total",
-            "reviews"
-        ].join(",");
-
-        const apiUrl = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=${fields}&key=${apiKey}`;
-
         try {
-            const response = await fetch(proxyUrl + apiUrl);
+            const response = await fetch("/api/google-reviews");
             const data = await response.json();
 
             if (data.result) {
