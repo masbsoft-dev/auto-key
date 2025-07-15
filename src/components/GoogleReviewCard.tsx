@@ -13,7 +13,7 @@ const GoogleReviewCard = ({ review } : { review: Review }) => {
 
     return (
         <div className="bg-gray-50 rounded-xl p-5 flex items-start max-w-2xl">
-            <div>
+            <div className="w-full">
             <img
                 src={review.profile_photo_url}
                 alt={review.author_name || "Foto"}
@@ -37,9 +37,11 @@ const GoogleReviewCard = ({ review } : { review: Review }) => {
                 </div>
             </div>
             </div>
+            <div className="w-full">
             <p className="text-sm text-gray-600 mt-1 leading-relaxed whitespace-pre-line">
                 {text}
             </p>
+            </div>
         </div>
     );
 };
