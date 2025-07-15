@@ -26,6 +26,7 @@ import img8 from "./assets/fotos/08.jpg"
 import img9 from "./assets/fotos/09.jpg"
 import img10 from "./assets/fotos/10.jpg"
 import BtWhatsApp from "./components/BtWhatsApp.tsx";
+import GoogleReviews from "./components/GoogleReviews.tsx";
 
 function App() {
 
@@ -146,13 +147,16 @@ function App() {
               </div>
           </div>
           <div className="w-full bg-white min-h-80 p-12">
-              <div className="items-center text-center text-black">
+              <div className="items-center text-center text-black mb-6">
                   <h1 className="uppercase font-black md:text-5xl text-3xl text-purple-900">O que dizem nossos clientes?</h1>
               </div>
               <div className="w-full">
-                  <iframe src="https://fbed4b6ad06541d58f3ac42f8200fc35.elf.site"
-                          className="md:w-full min-w-[100%] md:min-h-[500px] min-h-[600px] " loading="lazy"
-                          referrerPolicy="no-referrer-when-downgrade"></iframe>
+                  {/*<iframe src="https://fbed4b6ad06541d58f3ac42f8200fc35.elf.site"*/}
+                  {/*        className="md:w-full min-w-[100%] md:min-h-[500px] min-h-[600px] " loading="lazy"*/}
+                  {/*        referrerPolicy="no-referrer-when-downgrade">*/}
+                  {/*    */}
+                  {/*</iframe>*/}
+                  <GoogleReviews/>
               </div>
           </div>
           <div className="w-full p-12">
