@@ -28,7 +28,7 @@ const GoogleReviews = () => {
             const response = await fetch("/api/google-reviews");
             const data = await response.json();
 
-            if (data.result) {
+            if (data?.result?.reviews && Array.isArray(data.result.reviews)) {
                 const sorted = [...(data.result.reviews || [])].sort((a, b) => b.time - a.time);
                 setPlace({
                     name: data.result.name,
