@@ -12,7 +12,7 @@ app.get("/api/google-reviews", async (req, res) => {
     const apiKey = process.env.GOOGLE_API_KEY;
 
     const fields = ["name", "rating", "user_ratings_total", "reviews"].join(",");
-    const apiUrl = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=${fields}&key=${apiKey}`;
+    const apiUrl = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=${fields}&key=${apiKey}&language=pt-BR`;
 
     try {
         const response = await fetch(apiUrl);

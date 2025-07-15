@@ -19,7 +19,7 @@ const GoogleReviewCard = ({ review } : { review: Review }) => {
                 alt={review.author_name || "Foto"}
                 className="w-16 h-16 rounded-full object-cover border border-gray-300"
             />
-            <div className="flex-1 ml-2">
+            <div className="flex-1">
                 <div className="flex flex-col text-base font-semibold text-gray-900">
                     <a className="text-base font-semibold text-gray-900 hover:underline"
                        target="_blank" href={review.author_url} >{review.author_name}</a>
