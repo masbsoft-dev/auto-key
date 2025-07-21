@@ -22,7 +22,8 @@ const GoogleReviewCard = ({ review } : { review: Review }) => {
             <div className="flex-1 ml-2">
                 <div className="flex flex-col text-base font-semibold text-gray-900">
                     <a className="text-base font-semibold text-gray-900 hover:underline"
-                       target="_blank" href={review.author_url} >{review.author_name}</a>
+                       target="_blank" href={review.author_url} >{review.author_name}
+                    </a>
                     <span className="text-xs text-gray-400">{review.relative_time_description}</span>
                     <div className="flex items-center gap-1">
                         {[...Array(rating)].map((_, i) => (

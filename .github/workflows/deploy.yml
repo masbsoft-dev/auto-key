@@ -32,6 +32,6 @@ jobs:
           
             npm install
             npm run build
-            sudo rm -rf /var/www/chaveiroautokey/*
-            sudo cp -r dist/* /var/www/chaveiroautokey/
+            sudo rm -rf /var/www/chaveiroautokey.com.br/public_html/*
+            sudo cp -r dist/* /var/www/chaveiroautokey.com.br/public_html
 
