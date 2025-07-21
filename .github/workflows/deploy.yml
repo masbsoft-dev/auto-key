@@ -9,8 +9,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Clonar o repositório
+      - name: Clonar o repositório localmente (não usado para deploy remoto)
         uses: actions/checkout@v3
+
+      - name: Adicionar chave do GitHub ao known_hosts
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
 
       - name: Conectar via SSH e fazer deploy
         uses: appleboy/ssh-action@v1.0.3
@@ -21,17 +26,19 @@ jobs:
           port: 22
           script: |
             set -e
+            mkdir -p ~/.ssh
+            ssh-keyscan github.com >> ~/.ssh/known_hosts
+            
             cd /home/marcio
-          
+
             if [ -d site ]; then
-            cd site && git pull origin main
+              cd site && git pull origin main
             else
-            git clone git@github.com:masbsoft-dev/auto-key.git site
-            cd site
+              git clone git@github.com:masbsoft-dev/auto-key.git site
+              cd site
             fi
-          
+
             npm install
             npm run build
             sudo rm -rf /var/www/chaveiroautokey.com.br/public_html/*
             sudo cp -r dist/* /var/www/chaveiroautokey.com.br/public_html
-
